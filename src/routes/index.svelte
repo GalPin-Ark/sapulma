@@ -19,7 +19,7 @@ const query = `{
   <title>Home Page</title>
 </svelte:head>
 
-<body>
+
   <section class="section">
     <div class="container">
       <h1 class="title">Section</h1>
@@ -81,4 +81,4 @@ is-one-quarter-fullhd">
       </div>
     </div>
   </section>
-</body>
+
