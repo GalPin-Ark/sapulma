@@ -8,7 +8,10 @@
     "export": "sapper export",
     "start": "node __sapper__/build",
     "build-css": "npx node-sass --omit-source-map-url static/style.scss static/global.css",
-    "clean-all": "rimraf __sapper__"
+    "clean-all": "rimraf __sapper__",
+    "cy:run": "cypress run",
+    "cy:open": "cypress open",
+    "test": "run-p --race dev cy:run"
   },
   "dependencies": {
     "compression": "^1.7.1",

@@ -18,7 +18,7 @@ characters{
  }
 }`
  
-        const res =  request('https://rickandmortyapi.com/graphql/', query).then((data)=>{return data; });
+        const res =  request('https://rickandmortyapi.com/graphql/', query).then((data)=>{return data; }).catch(function (e) { console.log(e)});
 		
 
 </script>
