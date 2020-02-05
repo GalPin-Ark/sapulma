@@ -8,7 +8,10 @@
     "export": "sapper export",
     "start": "node __sapper__/build",
     "build-css": "npx node-sass --omit-source-map-url static/style.scss static/global.css",
-    "clean-all": "rimraf __sapper__"
+    "clean-all": "rimraf __sapper__",
+    "cy:run": "cypress run",
+    "cy:open": "cypress open",
+    "test": "run-p --race dev cy:run"
   },
   "dependencies": {
     "compression": "^1.7.1",
@@ -22,6 +25,7 @@
     "@babel/preset-env": "^7.0.0",
     "@babel/runtime": "^7.0.0",
     "bulma": "^0.7.5",
+    "cypress": "^3.8.3",
     "node-sass": "^4.12.0",
     "npm-run-all": "^4.1.5",
     "rimraf": "^2.6.3",

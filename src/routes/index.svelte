@@ -2,16 +2,23 @@
 import { request } from 'graphql-request'
  
 const query = `{
-  characters{
-   
-    results {
-      name
-      image
-    }
-  }
+characters{
+   results {
+	 name
+	 species
+	 gender
+	 image
+	 origin {
+		 name
+	 }
+	 location {
+		 name
+	 }
+   }
+ }
 }`
  
-        const res =  request('https://rickandmortyapi.com/graphql/', query).then((data)=>{return data; });
+        const res =  request('https://rickandmortyapi.com/graphql/', query).then((data)=>{return data; }).catch(function (e) { console.log(e)});
 		
 
 </script>
@@ -62,16 +69,16 @@ is-one-quarter-fullhd">
 				</div>
 				<div class="media-content">
 					<p class="title is-4">{resu.name}</p>
-					<p class="subtitle is-6">@johnsmith</p>
+					<p class="subtitle is-6">{resu.species} ({resu.gender})</p>
 				</div>
 				</div>
 
 				<div class="content">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-				Phasellus nec iaculis mauris. <a href=".">@bulmaio</a>.
-				<a href=".">#css</a> <a href=".">#responsive</a>
+					From {resu.origin.name} <br>
+					Last known location: {resu.location.name}
+
 				<br>
-				<time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+
 				</div>
 			</div>
 			</div>

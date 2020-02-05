@@ -1,3 +1,5 @@
 node_modules
 __sapper__
 global.css
+cypress/screenshots
+cypress/videos
